@@ -4,14 +4,18 @@
 	let {
 		children,
 		delay = 0,
-		direction = 'up'
+		direction = 'up',
+		stagger = 0
 	}: {
 		children: Snippet;
 		delay?: number;
-		direction?: 'up' | 'left' | 'right';
+		direction?: 'up' | 'left' | 'right' | 'down';
+		stagger?: number;
 	} = $props();
 
 	let visible = $state(false);
+
+	const totalDelay = delay + stagger * 80;
 
 	function reveal(node: HTMLElement) {
 		const observer = new IntersectionObserver(
@@ -28,15 +32,18 @@
 	}
 
 	const transforms: Record<string, string> = {
-		up: 'translateY(30px)',
-		left: 'translateX(-30px)',
-		right: 'translateX(30px)'
+		up: 'translateY(40px)',
+		down: 'translateY(-40px)',
+		left: 'translateX(-40px)',
+		right: 'translateX(40px)'
 	};
 </script>
 
 <div
 	use:reveal
-	style="opacity: {visible ? 1 : 0}; transform: {visible ? 'none' : transforms[direction]}; transition: opacity 0.6s ease-out {delay}ms, transform 0.6s ease-out {delay}ms;"
+	style="opacity: {visible ? 1 : 0}; filter: blur({visible ? 0 : 8}px); transform: {visible
+		? 'none'
+		: transforms[direction]}; transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) {totalDelay}ms, filter 0.7s cubic-bezier(0.22, 1, 0.36, 1) {totalDelay}ms, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) {totalDelay}ms;"
 >
 	{@render children()}
 </div>

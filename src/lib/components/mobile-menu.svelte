@@ -34,13 +34,13 @@
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="fixed inset-0 z-50" onkeydown={handleKeydown}>
 		<div
-			class="absolute inset-0 bg-black/50"
+			class="absolute inset-0 bg-black/40 backdrop-blur-sm"
 			onclick={handleBackdropClick}
 			role="presentation"
 		></div>
 
 		<div
-			class="absolute right-0 top-0 h-full w-80 max-w-full overflow-y-auto bg-white shadow-xl transition-transform"
+			class="absolute right-0 top-0 h-full w-80 max-w-full overflow-y-auto bg-white shadow-2xl transition-transform"
 		>
 			<div class="flex items-center justify-between border-b border-gray-100 px-5 py-4">
 				<a href="/" onclick={onclose}>
@@ -75,19 +75,7 @@
 							onclick={() => (aboutExpanded = !aboutExpanded)}
 						>
 							About
-							<svg
-								class="h-4 w-4 transition-transform {aboutExpanded ? 'rotate-180' : ''}"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M19 9l-7 7-7-7"
-								/>
-							</svg>
+							<span class="inline-block text-base transition-transform {aboutExpanded ? 'rotate-90' : ''}">&raquo;</span>
 						</button>
 						{#if aboutExpanded}
 							<ul class="ml-3 space-y-1 border-l-2 border-primary/20 pl-3">

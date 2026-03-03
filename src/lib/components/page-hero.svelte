@@ -8,34 +8,45 @@
 	} = $props();
 </script>
 
-<section class="relative overflow-hidden bg-gradient-to-r from-primary-deep to-primary-dark py-20 lg:py-28">
-	<div class="absolute inset-0 flex items-center justify-center opacity-5">
-		<img src="/images/logos/emblem.png" alt="" class="h-96 w-96 object-contain" />
-	</div>
+<section class="relative overflow-hidden bg-navy py-24 lg:py-32">
+	<div class="gradient-mesh-bg absolute inset-0"></div>
 
-	<div class="relative mx-auto max-w-7xl px-4 text-center lg:px-8">
-		<h1 class="font-heading text-4xl font-bold text-white lg:text-5xl">
-			{title}
-		</h1>
+	<svg class="absolute top-12 right-16 h-48 w-48 text-white/[0.03]" style="animation: float 6s ease-in-out infinite;" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+		<polyline points="30,20 10,50 30,80" />
+		<polyline points="40,20 20,50 40,80" />
+		<polyline points="60,20 80,50 60,80" />
+		<polyline points="70,20 90,50 70,80" />
+	</svg>
+	<svg class="absolute bottom-8 left-12 h-32 w-32 text-white/[0.03]" style="animation: float-reverse 7s ease-in-out infinite;" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+		<polyline points="30,20 10,50 30,80" />
+		<polyline points="40,20 20,50 40,80" />
+		<polyline points="60,20 80,50 60,80" />
+		<polyline points="70,20 90,50 70,80" />
+	</svg>
 
+	<div class="relative mx-auto max-w-7xl px-4 lg:px-8">
 		{#if breadcrumbs?.length}
-			<nav class="mt-6 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+			<nav class="mb-6 flex items-center gap-2" aria-label="Breadcrumb">
 				{#each breadcrumbs as crumb, i (crumb.label)}
 					{#if i > 0}
-						<span class="text-sm text-white/50">/</span>
+						<span class="text-xs text-slate">&raquo;</span>
 					{/if}
 					{#if crumb.href && i < breadcrumbs.length - 1}
 						<a
 							href={crumb.href}
-							class="text-sm text-white/70 transition-colors hover:text-primary"
+							class="text-xs font-medium uppercase tracking-widest text-slate transition-colors hover:text-primary"
 						>
 							{crumb.label}
 						</a>
 					{:else}
-						<span class="text-sm text-white">{crumb.label}</span>
+						<span class="text-xs font-medium uppercase tracking-widest text-white">{crumb.label}</span>
 					{/if}
 				{/each}
 			</nav>
 		{/if}
+		<h1 class="max-w-3xl font-heading text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight tracking-tight text-white">
+			{title}
+		</h1>
+		<div class="mt-6 h-1 w-16 rounded-full bg-primary"></div>
 	</div>
 </section>
