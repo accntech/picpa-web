@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHero from '$lib/components/page-hero.svelte';
+	import ScrollReveal from '$lib/components/scroll-reveal.svelte';
 
 	const upcomingEvents = [
 		{
@@ -98,152 +99,294 @@
 	];
 </script>
 
-<PageHero title="Events & Announcements" breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Events' }]} />
+<PageHero
+	title="Events & Announcements"
+	breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Events' }]}
+/>
 
-<section class="bg-primary/5 py-8">
-	<div class="mx-auto flex max-w-7xl items-center gap-4 px-4">
-		<svg class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-			<circle cx="12" cy="12" r="10" />
-			<line x1="12" y1="16" x2="12" y2="12" />
-			<line x1="12" y1="8" x2="12.01" y2="8" />
-		</svg>
-		<p class="text-body">
-			For complete event listings and registration, visit the PICPA Events Portal.
-		</p>
-		<a
-			href="https://picpasystem.com.ph/events/"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="ml-auto shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-dark"
-		>
-			Visit Events Portal
-		</a>
+<section class="relative overflow-hidden bg-navy py-6">
+	<div class="gradient-mesh-bg pointer-events-none absolute inset-0 opacity-40"></div>
+	<div class="relative mx-auto flex max-w-7xl items-center gap-4 px-4 lg:px-8">
+		<div class="glass flex flex-1 items-center gap-4 rounded-2xl px-6 py-4">
+			<svg class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="12" cy="12" r="10" />
+				<path d="M12 16v-4" />
+				<path d="M12 8h.01" />
+			</svg>
+			<p class="text-sm text-white/80">
+				For complete event listings and registration, visit the PICPA Events Portal.
+			</p>
+			<a
+				href="https://picpasystem.com.ph/events/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+			>
+				Visit Events Portal
+				<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M7 17L17 7M17 7H7M17 7v10" />
+				</svg>
+			</a>
+		</div>
 	</div>
 </section>
 
-<section class="bg-white py-20">
-	<div class="mx-auto max-w-7xl px-4">
-		<h2 class="font-heading text-2xl font-bold text-dark">Upcoming Events</h2>
-		<div class="mt-8 space-y-6">
-			{#each upcomingEvents as event (event.title)}
-				<div class="flex flex-col gap-6 rounded-xl bg-light p-6 lg:flex-row">
-					<div class="shrink-0 lg:w-40">
-						<div class="rounded-xl bg-primary p-4 text-center text-white">
-							<div class="text-2xl font-bold">{event.dayRange}</div>
-							<div class="text-sm">{event.monthYear}</div>
+<section class="relative overflow-hidden bg-navy py-24">
+	<div class="gradient-mesh-bg pointer-events-none absolute inset-0 opacity-30"></div>
+	<svg class="pointer-events-none absolute -top-8 -right-10 h-72 w-72 text-white opacity-[0.03]" viewBox="0 0 87 85" fill="currentColor">
+		<polygon points="33,84 14,57 33,28 19,28 0,57 19,84" />
+		<polygon points="51,84 32,57 51,28 37,28 18,57 37,84" />
+		<polygon points="36,57 55,29 36,0 50,0 69,29 50,57" />
+		<polygon points="54,57 73,29 54,0 68,0 87,29 68,57" />
+	</svg>
+	<div class="relative mx-auto max-w-7xl px-4 lg:px-8">
+		<ScrollReveal>
+			<div class="flex items-end justify-between">
+				<div>
+					<span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+						<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+							<path d="M16 2v4M8 2v4M3 10h18" />
+						</svg>
+						Upcoming
+					</span>
+					<h2 class="mt-4 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-white">
+						Featured Events
+					</h2>
+				</div>
+			</div>
+		</ScrollReveal>
+
+		<div class="mt-12 space-y-8">
+			{#each upcomingEvents as event, i (event.title)}
+				<ScrollReveal stagger={i}>
+					<div class="glass group relative overflow-hidden rounded-2xl">
+						<div class="absolute inset-0 bg-linear-to-r from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+						<div class="relative flex flex-col gap-6 p-6 lg:flex-row lg:p-8">
+							<div class="shrink-0 lg:w-44">
+								<div class="rounded-2xl bg-linear-to-br from-primary to-primary-dark p-5 text-center text-white">
+									<div class="font-heading text-3xl font-bold leading-none">{event.dayRange}</div>
+									<div class="mt-1 text-sm font-medium text-white/80">{event.monthYear}</div>
+								</div>
+							</div>
+							<div class="flex-1">
+								<div class="flex flex-wrap items-center gap-2">
+									<span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+										{event.category}
+									</span>
+									<span class="rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
+										{event.cpdUnits}
+									</span>
+								</div>
+								<h3 class="mt-3 font-heading text-xl font-bold text-white lg:text-2xl">
+									{event.title}
+								</h3>
+								<p class="mt-2 flex items-center gap-2 text-sm text-slate">
+									<svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+										<circle cx="12" cy="10" r="3" />
+									</svg>
+									{event.location}
+								</p>
+								<p class="mt-3 leading-relaxed text-white/70">{event.desc}</p>
+								<div class="mt-5 flex flex-wrap items-center gap-4">
+									<a
+										href={event.registrationUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-white transition-all hover:bg-primary-dark hover:gap-3"
+									>
+										Register Now
+										<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M7 17L17 7M17 7H7M17 7v10" />
+										</svg>
+									</a>
+									<span class="text-sm text-white/50">{event.pricing}</span>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="flex-1">
-						<div class="flex flex-wrap items-center gap-2">
+				</ScrollReveal>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<section class="bg-light py-20">
+	<div class="mx-auto max-w-7xl px-4 lg:px-8">
+		<ScrollReveal>
+			<div class="flex items-end justify-between">
+				<div>
+					<span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+						<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+							<path d="M18 14h-8M15 18h-5" />
+						</svg>
+						Latest
+					</span>
+					<h2 class="mt-4 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark">
+						News & Highlights
+					</h2>
+				</div>
+			</div>
+		</ScrollReveal>
+
+		<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+			{#each newsHighlights as item, i (item.title)}
+				<ScrollReveal stagger={i}>
+					<a
+						href={item.link}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+					>
+						<div class="relative aspect-video overflow-hidden">
+							<img
+								src={item.image}
+								alt={item.title}
+								class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+							/>
+							<div class="absolute inset-0 bg-linear-to-t from-navy/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+						</div>
+						<div class="p-6">
 							<span class="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-								{event.category}
+								{item.date}
 							</span>
-							<span class="inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
-								{event.cpdUnits}
-							</span>
-						</div>
-						<h3 class="mt-2 font-heading text-xl font-bold text-dark">{event.title}</h3>
-						<p class="mt-1 flex items-center gap-1 text-sm text-body">
-							<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-								<circle cx="12" cy="10" r="3" />
-							</svg>
-							{event.location}
-						</p>
-						<p class="mt-2 text-body">{event.desc}</p>
-						<div class="mt-4 flex flex-wrap items-center gap-4">
-							<a
-								href={event.registrationUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-primary-dark"
-							>
-								Register Now
-								<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-									<path d="M7 17L17 7M17 7H7M17 7v10" />
+							<h3 class="mt-3 font-heading text-lg font-bold text-dark transition-colors group-hover:text-primary">
+								{item.title}
+							</h3>
+							<p class="mt-2 text-sm leading-relaxed text-body">{item.desc}</p>
+							<span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:gap-2 group-hover:opacity-100">
+								Read more
+								<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M5 12h14M12 5l7 7-7 7" />
 								</svg>
-							</a>
-							<span class="text-sm text-body">{event.pricing}</span>
+							</span>
 						</div>
-					</div>
-				</div>
+					</a>
+				</ScrollReveal>
 			{/each}
 		</div>
 	</div>
 </section>
 
-<section class="bg-light py-20">
-	<div class="mx-auto max-w-7xl px-4">
-		<h2 class="font-heading text-2xl font-bold text-dark">News & Highlights</h2>
-		<div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-			{#each newsHighlights as item (item.title)}
-				<a
-					href={item.link}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group overflow-hidden rounded-xl bg-white transition hover:shadow-lg"
-				>
-					<div class="aspect-video overflow-hidden bg-gray-100">
-						<img
-							src={item.image}
-							alt={item.title}
-							class="h-full w-full object-cover transition group-hover:scale-105"
-						/>
-					</div>
-					<div class="p-5">
-						<span class="text-xs font-medium text-primary">{item.date}</span>
-						<h3 class="mt-1 font-heading text-lg font-bold text-dark group-hover:text-primary transition">
-							{item.title}
+<section class="relative overflow-hidden bg-white py-24">
+	<svg class="pointer-events-none absolute bottom-12 left-8 h-40 w-40 text-navy opacity-[0.03]" style="animation: float-reverse 8s ease-in-out infinite;" viewBox="0 0 87 85" fill="currentColor">
+		<polygon points="33,84 14,57 33,28 19,28 0,57 19,84" />
+		<polygon points="51,84 32,57 51,28 37,28 18,57 37,84" />
+		<polygon points="36,57 55,29 36,0 50,0 69,29 50,57" />
+		<polygon points="54,57 73,29 54,0 68,0 87,29 68,57" />
+	</svg>
+	<div class="relative mx-auto max-w-7xl px-4 lg:px-8">
+		<ScrollReveal>
+			<div>
+				<span class="inline-flex items-center gap-2 rounded-full bg-gold/10 px-4 py-1.5 text-xs font-medium text-gold">
+					<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+						<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+					</svg>
+					Accounting Times
+				</span>
+				<h2 class="mt-4 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark">
+					Publications
+				</h2>
+				<p class="mt-2 text-body">Latest editions of the PICPA Accounting Times</p>
+			</div>
+		</ScrollReveal>
+
+		<div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+			{#each publications as pub, i (pub.title)}
+				<ScrollReveal stagger={i}>
+					<a
+						href={pub.link}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group block overflow-hidden rounded-2xl bg-light transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+					>
+						<div class="relative overflow-hidden">
+							<div class="aspect-[3/4]">
+								<img
+									src={pub.image}
+									alt={pub.title}
+									class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+								/>
+							</div>
+							<div class="absolute inset-0 rounded-t-2xl border-2 border-transparent transition-colors duration-300 group-hover:border-primary/30"></div>
+						</div>
+						<div class="p-5">
+							<span class="text-xs font-medium text-primary">{pub.date}</span>
+							<h3 class="mt-1 text-sm font-bold text-dark transition-colors group-hover:text-primary">
+								{pub.title}
+							</h3>
+						</div>
+					</a>
+				</ScrollReveal>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<section class="relative overflow-hidden bg-navy py-24">
+	<div class="gradient-mesh-bg pointer-events-none absolute inset-0 opacity-30"></div>
+	<svg class="pointer-events-none absolute bottom-8 right-16 h-48 w-48 text-white opacity-[0.03]" style="animation: float 7s ease-in-out infinite;" viewBox="0 0 87 85" fill="currentColor">
+		<polygon points="33,84 14,57 33,28 19,28 0,57 19,84" />
+		<polygon points="51,84 32,57 51,28 37,28 18,57 37,84" />
+		<polygon points="36,57 55,29 36,0 50,0 69,29 50,57" />
+		<polygon points="54,57 73,29 54,0 68,0 87,29 68,57" />
+	</svg>
+	<div class="relative mx-auto max-w-7xl px-4 lg:px-8">
+		<ScrollReveal>
+			<div class="text-center">
+				<span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+					<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+						<circle cx="9" cy="7" r="4" />
+						<path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+					</svg>
+					Annual Programs
+				</span>
+				<h2 class="mt-4 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-white">
+					Recurring Events
+				</h2>
+			</div>
+		</ScrollReveal>
+
+		<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+			{#each recurringEvents as event, i (event.title)}
+				<ScrollReveal stagger={i}>
+					<div class="glass group rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1">
+						{#if event.frequency === 'Yearly'}
+							<div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+								<svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M8 2v4M16 2v4M3 10h18" />
+									<rect x="3" y="4" width="18" height="18" rx="2" />
+									<path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+								</svg>
+							</div>
+						{:else if event.frequency === 'Quarterly'}
+							<div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+								<svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+									<circle cx="12" cy="10" r="3" />
+								</svg>
+							</div>
+						{:else}
+							<div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+								<svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+									<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+								</svg>
+							</div>
+						{/if}
+						<span class="mt-4 inline-block text-xs font-semibold uppercase tracking-widest text-primary">
+							{event.frequency}
+						</span>
+						<h3 class="mt-3 font-heading text-lg font-bold text-white">
+							{event.title}
 						</h3>
-						<p class="mt-2 text-sm text-body">{item.desc}</p>
+						<p class="mt-2 text-sm leading-relaxed text-white/60">{event.desc}</p>
 					</div>
-				</a>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<section class="bg-white py-20">
-	<div class="mx-auto max-w-7xl px-4">
-		<h2 class="font-heading text-2xl font-bold text-dark">Publications</h2>
-		<p class="mt-2 text-body">Latest editions of the PICPA Accounting Times</p>
-		<div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-			{#each publications as pub (pub.title)}
-				<a
-					href={pub.link}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group overflow-hidden rounded-xl bg-light transition hover:shadow-lg"
-				>
-					<div class="aspect-[3/4] overflow-hidden bg-gray-100">
-						<img
-							src={pub.image}
-							alt={pub.title}
-							class="h-full w-full object-cover transition group-hover:scale-105"
-						/>
-					</div>
-					<div class="p-4">
-						<span class="text-xs font-medium text-primary">{pub.date}</span>
-						<h3 class="mt-1 text-sm font-bold text-dark group-hover:text-primary transition">
-							{pub.title}
-						</h3>
-					</div>
-				</a>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<section class="bg-light py-20">
-	<div class="mx-auto max-w-7xl px-4 text-center">
-		<h2 class="font-heading text-2xl font-bold text-dark">Recurring Events</h2>
-		<div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-			{#each recurringEvents as event (event.title)}
-				<div class="rounded-xl bg-white p-6">
-					<span class="text-xs font-medium uppercase tracking-wide text-primary">{event.frequency}</span>
-					<h3 class="mt-2 font-heading text-lg font-bold text-dark">{event.title}</h3>
-					<p class="mt-2 text-sm text-body">{event.desc}</p>
-				</div>
+				</ScrollReveal>
 			{/each}
 		</div>
 	</div>

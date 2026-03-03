@@ -15,7 +15,7 @@
 			class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
 		/>
 	</div>
-	<div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent"></div>
+	<div class="absolute inset-0 bg-linear-to-t from-navy via-navy/60 to-transparent"></div>
 	<div class="absolute inset-x-0 bottom-0 p-6">
 		<p class="text-xs font-medium uppercase tracking-widest text-primary">{date}</p>
 		<h3 class="mt-2 font-heading text-lg font-bold leading-snug text-white">{title}</h3>

@@ -16,6 +16,11 @@
 		return () => window.removeEventListener('scroll', onScroll);
 	});
 
+	$effect(() => {
+		document.body.style.overflow = mobileOpen ? 'hidden' : '';
+		return () => { document.body.style.overflow = ''; };
+	});
+
 	const navLinks = [
 		{ label: 'Home', href: '/' },
 		{
@@ -43,7 +48,7 @@
 <header
 	class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 {isTransparent
 		? 'bg-transparent'
-		: 'bg-white shadow-md'}"
+		: 'bg-white/80 backdrop-blur-xl shadow-sm'}"
 >
 	<nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
 		<a href="/">
@@ -85,7 +90,7 @@
 						{#if aboutOpen}
 							<!-- svelte-ignore a11y_no_static_element_interactions -->
 							<div
-								class="absolute left-0 top-full min-w-52 rounded-lg bg-white py-2 shadow-lg"
+								class="absolute left-0 top-full min-w-52 rounded-xl bg-white/95 backdrop-blur-xl py-2 shadow-xl"
 								onmouseenter={() => (aboutOpen = true)}
 								onmouseleave={() => (aboutOpen = false)}
 							>
@@ -116,7 +121,7 @@
 		<div class="hidden lg:block">
 			<a
 				href="https://picpasystem.com.ph/portal/login.html" target="_blank" rel="noopener noreferrer"
-				class="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+				class="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-primary-dark hover:shadow-[0_0_20px_rgba(24,179,85,0.3)]"
 			>
 				My MELS Account
 			</a>
