@@ -115,10 +115,10 @@
 
 		<div class="hidden lg:block">
 			<a
-				href="/members"
+				href="https://picpasystem.com.ph/portal/login.html" target="_blank" rel="noopener noreferrer"
 				class="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
 			>
-				Become a Member
+				My MELS Account
 			</a>
 		</div>
 

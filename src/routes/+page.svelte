@@ -50,7 +50,7 @@
 
 <div class="pt-0">
 	<!-- Hero -->
-	<section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-primary-deep">
+	<section class="relative flex justify-center items-center bg-primary-deep min-h-screen overflow-hidden">
 		<div class="absolute inset-0">
 			<iframe
 				src="https://www.youtube.com/embed/ir1c7gbSwGw?autoplay=1&mute=1&loop=1&playlist=ir1c7gbSwGw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
@@ -58,32 +58,31 @@
 				frameborder="0"
 				allow="autoplay; encrypted-media"
 				allowfullscreen
-				class="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[120%] min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
-				style="aspect-ratio: 16/9;"
+				class="hero-video pointer-events-none"
 			></iframe>
 		</div>
 		<div class="absolute inset-0 bg-black/60"></div>
-		<div class="relative z-10 px-4 text-center">
-			<p class="text-sm font-medium uppercase tracking-widest text-gold">EST. 1929</p>
-			<h1 class="mx-auto mt-4 max-w-4xl font-heading text-5xl font-bold leading-tight text-white lg:text-7xl">
+		<div class="z-10 relative px-4 text-center">
+			<p class="font-medium text-gold text-sm uppercase tracking-widest">EST. 1929</p>
+			<h1 class="mx-auto mt-4 max-w-4xl font-heading font-bold text-white text-5xl lg:text-7xl leading-tight">
 				Philippine Institute of Certified Public Accountants
 			</h1>
-			<p class="mx-auto mt-6 max-w-2xl text-lg text-white/80 lg:text-xl">
+			<p class="mx-auto mt-6 max-w-2xl text-white/80 text-lg lg:text-xl">
 				The National Organization of Certified Public Accountants
 			</p>
 			<p class="mt-4 font-medium text-gold">
 				Awarded five times as PRC's most outstanding AIPO
 			</p>
-			<div class="mt-10 flex justify-center gap-4">
+			<div class="flex justify-center gap-4 mt-10">
 				<a
 					href="https://picpasystem.com.ph/portal/login.html" target="_blank" rel="noopener noreferrer"
-					class="rounded-lg bg-primary px-8 py-3.5 font-medium text-white transition hover:bg-primary-dark"
+					class="bg-primary hover:bg-primary-dark px-8 py-3.5 rounded-lg font-medium text-white transition"
 				>
 					My MELS Account
 				</a>
 				<a
 					href="/about"
-					class="rounded-lg border-2 border-white px-8 py-3.5 font-medium text-white transition hover:bg-white hover:text-dark"
+					class="hover:bg-white px-8 py-3.5 border-2 border-white rounded-lg font-medium text-white hover:text-dark transition"
 				>
 					Learn More
 				</a>
@@ -97,27 +96,27 @@
 	<!-- President's Section -->
 	<section class="bg-white py-20">
 		<ScrollReveal>
-			<div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2">
+			<div class="items-center gap-12 grid grid-cols-1 lg:grid-cols-2 mx-auto px-4 max-w-7xl">
 				<div class="relative">
-					<div class="absolute -right-4 -bottom-4 -z-10 h-full w-full rounded-2xl bg-primary/20"></div>
+					<div class="-right-4 -bottom-4 -z-10 absolute bg-primary/20 rounded-2xl w-full h-full"></div>
 					<img
 						src="/images/president/gbs1.png"
 						alt="Gerard B. Sanvictores"
-						class="relative rounded-2xl border-4 border-primary/20 object-cover"
+						class="relative border-4 border-primary/20 rounded-2xl object-cover"
 					/>
 				</div>
 				<div>
-					<span class="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+					<span class="inline-block bg-primary/10 px-4 py-1.5 rounded-full font-medium text-primary text-sm">
 						FY 2025-2026
 					</span>
-					<h2 class="mt-4 font-heading text-3xl font-bold text-dark">Gerard B. Sanvictores</h2>
+					<h2 class="mt-4 font-heading font-bold text-dark text-3xl">Gerard B. Sanvictores</h2>
 					<p class="mt-1 text-body">National President</p>
-					<p class="mt-6 font-heading text-2xl font-bold text-primary-dark">ACTION with IMPACT</p>
-					<div class="mt-8 grid grid-cols-2 gap-6">
+					<p class="mt-6 font-heading font-bold text-primary-dark text-2xl">ACTION with IMPACT</p>
+					<div class="gap-6 grid grid-cols-2 mt-8">
 						<div class="space-y-2">
 							{#each actionWords as word (word)}
 								<div class="flex items-center gap-2">
-									<span class="h-2 w-2 rounded-full bg-primary"></span>
+									<span class="bg-primary rounded-full w-2 h-2"></span>
 									<span class="text-body">{word}</span>
 								</div>
 							{/each}
@@ -125,7 +124,7 @@
 						<div class="space-y-2">
 							{#each impactWords as word (word)}
 								<div class="flex items-center gap-2">
-									<span class="h-2 w-2 rounded-full bg-primary"></span>
+									<span class="bg-primary rounded-full w-2 h-2"></span>
 									<span class="text-body">{word}</span>
 								</div>
 							{/each}
@@ -139,12 +138,12 @@
 	<!-- About Preview -->
 	<section class="bg-light py-20">
 		<ScrollReveal delay={100}>
-			<div class="mx-auto max-w-4xl px-4 text-center">
-				<span class="inline-block rounded-full bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
+			<div class="mx-auto px-4 max-w-4xl text-center">
+				<span class="inline-block bg-gold/10 px-4 py-1.5 rounded-full font-medium text-gold text-sm">
 					Founded in November 1929
 				</span>
-				<h2 class="mt-6 font-heading text-3xl font-bold text-dark">About PICPA</h2>
-				<p class="mt-4 leading-relaxed text-body">
+				<h2 class="mt-6 font-heading font-bold text-dark text-3xl">About PICPA</h2>
+				<p class="mt-4 text-body leading-relaxed">
 					The Philippine Institute of Certified Public Accountants (PICPA) is the Accredited
 					Integrated Professional Organization (AIPO) of CPAs, recognized by the Professional
 					Regulation Commission (PRC). For over nine decades, PICPA has been dedicated to promoting,
@@ -152,7 +151,7 @@
 				</p>
 				<a
 					href="/about"
-					class="mt-8 inline-flex items-center gap-2 font-medium text-primary transition-all hover:gap-3"
+					class="inline-flex items-center gap-2 hover:gap-3 mt-8 font-medium text-primary transition-all"
 				>
 					Learn More About PICPA &rarr;
 				</a>
@@ -162,10 +161,10 @@
 
 	<!-- Announcements -->
 	<section class="bg-white py-20">
-		<div class="mx-auto max-w-7xl px-4">
-			<h2 class="text-center font-heading text-3xl font-bold text-dark">Latest Announcements</h2>
-			<p class="mt-2 text-center text-body">Stay updated with the latest news from PICPA</p>
-			<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+		<div class="mx-auto px-4 max-w-7xl">
+			<h2 class="font-heading font-bold text-dark text-3xl text-center">Latest Announcements</h2>
+			<p class="mt-2 text-body text-center">Stay updated with the latest news from PICPA</p>
+			<div class="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
 				{#each announcements as item, i (item.title)}
 					<ScrollReveal delay={i * 100}>
 						<AnnouncementCard
@@ -183,27 +182,27 @@
 	<!-- Foundation Preview -->
 	<section class="bg-light py-20">
 		<ScrollReveal>
-			<div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2">
+			<div class="items-center gap-12 grid grid-cols-1 lg:grid-cols-2 mx-auto px-4 max-w-7xl">
 				<div>
-					<span class="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+					<span class="inline-block bg-primary/10 px-4 py-1.5 rounded-full font-medium text-primary text-sm">
 						Established 1981
 					</span>
-					<h2 class="mt-4 font-heading text-3xl font-bold text-dark">PICPA Foundation Inc.</h2>
+					<h2 class="mt-4 font-heading font-bold text-dark text-3xl">PICPA Foundation Inc.</h2>
 					<p class="mt-4 text-body">
 						The PICPA Foundation supports the advancement of the accountancy profession through
 						research, development, scholarships, and community programs.
 					</p>
-					<ul class="mt-6 space-y-3">
+					<ul class="space-y-3 mt-6">
 						{#each programs as program (program)}
 							<li class="flex items-center gap-3">
-								<svg class="h-5 w-5 shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 								</svg>
 								<span class="text-body">{program}</span>
 							</li>
 						{/each}
 					</ul>
-					<a href="/foundation" class="mt-6 inline-flex items-center gap-2 font-medium text-primary transition-all hover:gap-3">
+					<a href="/foundation" class="inline-flex items-center gap-2 hover:gap-3 mt-6 font-medium text-primary transition-all">
 						Learn More &rarr;
 					</a>
 				</div>
@@ -211,7 +210,7 @@
 					<img
 						src="/images/foundation/board.png"
 						alt="PICPA Foundation Board"
-						class="rounded-2xl shadow-lg"
+						class="shadow-lg rounded-2xl"
 					/>
 				</div>
 			</div>
@@ -219,15 +218,15 @@
 	</section>
 
 	<!-- CTA Banner -->
-	<section class="relative overflow-hidden bg-gradient-to-r from-primary to-primary-dark py-20">
+	<section class="relative bg-linear-to-r from-primary to-primary-dark py-20 overflow-hidden">
 		<img
 			src="/images/logos/emblem.png"
 			alt=""
-			class="pointer-events-none absolute right-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 translate-x-1/4 opacity-10"
+			class="top-1/2 right-0 absolute opacity-10 w-100 h-100 -translate-y-1/2 translate-x-1/4 pointer-events-none"
 		/>
 		<ScrollReveal>
-			<div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
-				<h2 class="font-heading text-3xl font-bold text-white lg:text-4xl">
+			<div class="z-10 relative mx-auto px-4 max-w-4xl text-center">
+				<h2 class="font-heading font-bold text-white text-3xl lg:text-4xl">
 					Join the Premier Organization of CPAs in the Philippines
 				</h2>
 				<p class="mx-auto mt-4 max-w-2xl text-white/80">
@@ -236,7 +235,7 @@
 				</p>
 				<a
 					href="https://picpasystem.com.ph/portal/login.html" target="_blank" rel="noopener noreferrer"
-					class="mt-8 inline-block rounded-lg bg-white px-8 py-3.5 font-medium text-primary transition hover:bg-light"
+					class="inline-block bg-white hover:bg-light mt-8 px-8 py-3.5 rounded-lg font-medium text-primary transition"
 				>
 					My MELS Account
 				</a>
@@ -244,3 +243,17 @@
 		</ScrollReveal>
 	</section>
 </div>
+
+<style>
+	.hero-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 177.78vh;
+		height: 100vh;
+		min-width: 100%;
+		min-height: 56.25vw;
+		border: 0;
+	}
+</style>

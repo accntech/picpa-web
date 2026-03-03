@@ -121,11 +121,11 @@
 
 			<div class="px-5 pb-6">
 				<a
-					href="/members"
+					href="https://picpasystem.com.ph/portal/login.html" target="_blank" rel="noopener noreferrer"
 					onclick={onclose}
 					class="block rounded-lg bg-primary px-5 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-primary-dark"
 				>
-					Become a Member
+					My MELS Account
 				</a>
 			</div>
 		</div>
