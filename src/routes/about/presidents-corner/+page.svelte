@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageHero from '$lib/components/PageHero.svelte';
+	import PageHero from '$lib/components/page-hero.svelte';
 
 	const actionCards = [
 		{ letter: 'A', word: 'Adapt', desc: 'Embrace change and evolve with the dynamic demands of the profession' },

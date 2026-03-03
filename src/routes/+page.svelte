@@ -1,7 +1,7 @@
 <script lang="ts">
-	import StatsBar from '$lib/components/StatsBar.svelte';
-	import AnnouncementCard from '$lib/components/AnnouncementCard.svelte';
-	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
+	import StatsBar from '$lib/components/stats-bar.svelte';
+	import AnnouncementCard from '$lib/components/announcement-card.svelte';
+	import ScrollReveal from '$lib/components/scroll-reveal.svelte';
 
 	const actionWords = ['Adapt', 'Commit', 'Transform', 'Innovate', 'Optimize', 'Nurture'];
 	const impactWords = ['Integrity', 'Merit', 'Professionalism', 'Accountability', 'Competence', 'Teamwork'];

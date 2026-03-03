@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MobileMenu from './MobileMenu.svelte';
+	import MobileMenu from './mobile-menu.svelte';
 
 	let { transparent = false }: { transparent?: boolean } = $props();
 

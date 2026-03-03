@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
-	import Navbar from '$lib/components/Navbar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import Navbar from '$lib/components/navbar.svelte';
+	import Footer from '$lib/components/footer.svelte';
 
 	let { children } = $props();
 

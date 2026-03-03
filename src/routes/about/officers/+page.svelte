@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageHero from '$lib/components/PageHero.svelte';
+	import PageHero from '$lib/components/page-hero.svelte';
 
 	const boardArchives = [
 		{ year: 'FY 2025-2026', open: true },
