@@ -3,9 +3,9 @@
 
 	let {
 		children,
-		delay = 0,
+		delay = $bindable(0),
 		direction = 'up',
-		stagger = 0
+		stagger = $bindable(0)
 	}: {
 		children: Snippet;
 		delay?: number;
