@@ -1,42 +1,40 @@
-# sv
+# PICPA Website
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The official website for the **Philippine Institute of Certified Public Accountants (PICPA)**, built with SvelteKit 2, Svelte 5, and Tailwind CSS 4.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Framework:** SvelteKit 2 + Svelte 5
+- **Styling:** Tailwind CSS 4
+- **Language:** TypeScript
+- **Runtime:** Bun
+
+## Pages
+
+- **Homepage** — hero, stats, announcements, quick links
+- **About** — overview, vision & mission, officers, president's corner
+- **Events** — upcoming CPE seminars and conferences
+- **Careers** — job board for accounting professionals
+- **Foundation** — PICPA Foundation programs
+- **Chapters** — regional chapter directory
+- **Members** — membership info and MELS portal
+- **Journal** — Accountant's Journal publication
+- **Contact** — office locations with Google Maps embed
+
+## Getting Started
 
 ```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv@0.12.4 create --template minimal --types ts --install bun picpa
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
+bun run dev
 ```
 
 ## Building
 
-To create a production version of your app:
-
 ```sh
-npm run build
+bun run build
+bun run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Design
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+"Editorial Stripe" design system — inspired by Stripe, Linear, and Vercel. Features navy/slate color palette, Plus Jakarta Sans typography, glass cards, gradient mesh backgrounds, and `<<>>` chevron motifs derived from the PICPA logo.
