@@ -142,20 +142,17 @@
 
 <section class="bg-white py-16">
 	<div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2">
-		<div class="flex h-64 flex-col items-center justify-center rounded-xl bg-light">
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-body/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-				<path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-			</svg>
-			<p class="mt-3 text-sm text-body">Shaw Boulevard, Mandaluyong City</p>
-			<a
-				href="https://maps.google.com/?q=PICPA+Shaw+Boulevard+Mandaluyong+City"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="mt-2 text-sm font-medium text-primary transition hover:text-primary-dark"
-			>
-				View on Google Maps &rarr;
-			</a>
+		<div class="overflow-hidden rounded-xl">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!4v1772549279924!6m8!1m7!1s_11TiCeydMYLFMLvVA_bqQ!2m2!1d14.58411813307402!2d121.0503369038619!3f9.518523622264699!4f8.775839773605469!5f0.7820865974627469"
+				width="100%"
+				height="300"
+				style="border:0;"
+				allowfullscreen
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+				title="PICPA Office Location"
+			></iframe>
 		</div>
 
 		<div>
