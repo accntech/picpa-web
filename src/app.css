@@ -11,3 +11,11 @@
 	--color-body: #4a4a4a;
 	--color-light: #f8f9fa;
 }
+
+html {
+	scroll-behavior: smooth;
+}
+
+::selection {
+	background-color: rgba(24, 179, 85, 0.2);
+}
