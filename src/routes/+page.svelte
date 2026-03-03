@@ -50,15 +50,19 @@
 
 <div class="pt-0">
 	<!-- Hero -->
-	<section
-		class="relative flex min-h-screen items-center justify-center bg-primary-deep"
-		style="background: radial-gradient(ellipse at center, rgba(24, 179, 85, 0.08) 0%, #0a1f13 70%)"
-	>
-		<img
-			src="/images/logos/emblem.png"
-			alt=""
-			class="pointer-events-none absolute h-[500px] w-[500px] opacity-5"
-		/>
+	<section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-primary-deep">
+		<div class="absolute inset-0">
+			<iframe
+				src="https://www.youtube.com/embed/ir1c7gbSwGw?autoplay=1&mute=1&loop=1&playlist=ir1c7gbSwGw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+				title="PICPA Background Video"
+				frameborder="0"
+				allow="autoplay; encrypted-media"
+				allowfullscreen
+				class="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[120%] min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
+				style="aspect-ratio: 16/9;"
+			></iframe>
+		</div>
+		<div class="absolute inset-0 bg-black/60"></div>
 		<div class="relative z-10 px-4 text-center">
 			<p class="text-sm font-medium uppercase tracking-widest text-gold">EST. 1929</p>
 			<h1 class="mx-auto mt-4 max-w-4xl font-heading text-5xl font-bold leading-tight text-white lg:text-7xl">
@@ -72,10 +76,10 @@
 			</p>
 			<div class="mt-10 flex justify-center gap-4">
 				<a
-					href="/members"
+					href="https://picpasystem.com.ph/portal/login.html" target="_blank" rel="noopener noreferrer"
 					class="rounded-lg bg-primary px-8 py-3.5 font-medium text-white transition hover:bg-primary-dark"
 				>
-					Become a Member
+					My MELS Account
 				</a>
 				<a
 					href="/about"
@@ -231,10 +235,10 @@
 					accountancy profession.
 				</p>
 				<a
-					href="/members"
+					href="https://picpasystem.com.ph/portal/login.html" target="_blank" rel="noopener noreferrer"
 					class="mt-8 inline-block rounded-lg bg-white px-8 py-3.5 font-medium text-primary transition hover:bg-light"
 				>
-					Become a Member
+					My MELS Account
 				</a>
 			</div>
 		</ScrollReveal>
