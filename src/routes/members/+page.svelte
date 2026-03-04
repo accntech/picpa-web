@@ -103,8 +103,8 @@
 
 		<div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each benefits as benefit, i (benefit.title)}
-				<ScrollReveal stagger={i}>
-					<div class="glass rounded-2xl p-8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(24,179,85,0.1)]">
+				<ScrollReveal class="h-full" stagger={i}>
+					<div class="glass h-full rounded-2xl p-8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(24,179,85,0.1)]">
 						<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
 							{#if benefit.icon === 'book'}
 								<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -147,8 +147,8 @@
 		<div class="mt-16 space-y-10">
 			{#each steps as step, i (step.number)}
 				<ScrollReveal stagger={i}>
-					<div class="flex items-start gap-8">
-						<span class="font-heading text-[clamp(3rem,5vw,4.5rem)] leading-none font-bold text-primary/15 select-none">
+					<div class="flex items-start gap-4 sm:gap-8">
+						<span class="font-heading text-[clamp(2.5rem,5vw,4.5rem)] leading-none font-bold text-primary/15 select-none">
 							{String(step.number).padStart(2, '0')}
 						</span>
 						<div class="flex-1 border-t border-primary/10 pt-4">

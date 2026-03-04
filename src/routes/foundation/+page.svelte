@@ -237,7 +237,7 @@
 				<img
 					src="/images/foundation/donee-certificate.png"
 					alt="Donee Institution Certificate"
-					class="mx-auto max-w-sm rounded-xl shadow-lg ring-1 ring-white/10"
+					class="mx-auto w-full max-w-sm rounded-xl shadow-lg ring-1 ring-white/10"
 				/>
 			</div>
 		</ScrollReveal>

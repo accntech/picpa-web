@@ -1,23 +1,34 @@
 <script lang="ts">
 	let { open, onclose }: { open: boolean; onclose: () => void } = $props();
 
-	let aboutExpanded = $state(false);
+	let expandedSection = $state<string | null>(null);
 
-	const aboutChildren = [
-		{ label: 'About PICPA', href: '/about' },
-		{ label: 'Vision & Mission', href: '/about/vision-mission' },
-		{ label: 'Officers', href: '/about/officers' },
-		{ label: "President's Corner", href: '/about/presidents-corner' }
+	const dropdowns = [
+		{
+			key: 'about',
+			label: 'About',
+			children: [
+				{ label: 'About PICPA', href: '/about' },
+				{ label: 'Vision & Mission', href: '/about/vision-mission' },
+				{ label: 'Officers', href: '/about/officers' },
+				{ label: "President's Corner", href: '/about/presidents-corner' }
+			]
+		},
+		{
+			key: 'community',
+			label: 'Community',
+			children: [
+				{ label: 'Members', href: '/members' },
+				{ label: 'Chapters', href: '/chapters' },
+				{ label: 'Journal', href: '/journal' }
+			]
+		}
 	];
 
 	const mainLinks = [
-		{ label: 'Home', href: '/' },
 		{ label: 'Events', href: '/events' },
 		{ label: 'Careers', href: '/careers' },
 		{ label: 'Foundation', href: '/foundation' },
-		{ label: 'Members', href: '/members' },
-		{ label: 'Chapters', href: '/chapters' },
-		{ label: 'Journal', href: '/journal' },
 		{ label: 'Contact', href: '/contact' }
 	];
 
@@ -27,6 +38,10 @@
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') onclose();
+	}
+
+	function toggleSection(key: string) {
+		expandedSection = expandedSection === key ? null : key;
 	}
 </script>
 
@@ -60,40 +75,46 @@
 
 			<nav class="px-5 py-4">
 				<ul class="space-y-1">
-					<li>
-						<a
-							href="/"
-							onclick={onclose}
-							class="block rounded-lg px-3 py-2.5 text-sm font-medium text-dark transition-colors hover:bg-light hover:text-primary"
-						>
-							Home
-						</a>
-					</li>
-					<li>
-						<button
-							class="flex w-full cursor-pointer items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-dark transition-colors hover:bg-light hover:text-primary"
-							onclick={() => (aboutExpanded = !aboutExpanded)}
-						>
-							About
-							<span class="inline-block text-base transition-transform {aboutExpanded ? 'rotate-90' : ''}">&raquo;</span>
-						</button>
-						{#if aboutExpanded}
-							<ul class="ml-3 space-y-1 border-l-2 border-primary/20 pl-3">
-								{#each aboutChildren as child (child.href)}
-									<li>
-										<a
-											href={child.href}
-											onclick={onclose}
-											class="block rounded-lg px-3 py-2 text-sm text-body transition-colors hover:text-primary"
-										>
-											{child.label}
-										</a>
-									</li>
-								{/each}
-							</ul>
+					{#each dropdowns as dropdown, i (dropdown.key)}
+						<li>
+							<button
+								class="flex w-full cursor-pointer items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-dark transition-colors hover:bg-light hover:text-primary"
+								onclick={() => toggleSection(dropdown.key)}
+							>
+								{dropdown.label}
+								<span class="inline-block text-base transition-transform {expandedSection === dropdown.key ? 'rotate-90' : ''}">&raquo;</span>
+							</button>
+							{#if expandedSection === dropdown.key}
+								<ul class="ml-3 space-y-1 border-l-2 border-primary/20 pl-3">
+									{#each dropdown.children as child (child.href)}
+										<li>
+											<a
+												href={child.href}
+												onclick={onclose}
+												class="block rounded-lg px-3 py-2 text-sm text-body transition-colors hover:text-primary"
+											>
+												{child.label}
+											</a>
+										</li>
+									{/each}
+								</ul>
+							{/if}
+						</li>
+						{#if i === 0}
+							{#each mainLinks.slice(0, 3) as link (link.href)}
+								<li>
+									<a
+										href={link.href}
+										onclick={onclose}
+										class="block rounded-lg px-3 py-2.5 text-sm font-medium text-dark transition-colors hover:bg-light hover:text-primary"
+									>
+										{link.label}
+									</a>
+								</li>
+							{/each}
 						{/if}
-					</li>
-					{#each mainLinks.slice(1) as link (link.href)}
+					{/each}
+					{#each mainLinks.slice(3) as link (link.href)}
 						<li>
 							<a
 								href={link.href}

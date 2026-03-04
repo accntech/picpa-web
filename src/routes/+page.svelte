@@ -168,17 +168,30 @@
 		<div class="mx-auto px-4 lg:px-8 max-w-7xl">
 			<div class="items-center gap-0 grid grid-cols-1 lg:grid-cols-[45fr_55fr]">
 				<ScrollReveal direction="left">
-					<div class="relative">
-						<img
-							src="/images/president/gbs1.png"
-							alt="Gerard B. Sanvictores"
-							class="relative rounded-2xl w-full h-full object-cover"
-						/>
-						<div
-							class="hidden lg:block right-0 absolute inset-y-0 bg-linear-to-r from-transparent to-white w-24"
-						></div>
+					<div class="relative gap-3 grid grid-cols-3">
+						<div class="rounded-2xl aspect-3/4 overflow-hidden">
+							<img
+								src="/images/president/gbs1-oath.webp"
+								alt="President Sanvictores taking oath"
+								class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+							/>
+						</div>
+						<div class="rounded-2xl aspect-3/4 overflow-hidden translate-y-6">
+							<img
+								src="/images/president/gbs1-award.webp"
+								alt="President Sanvictores receiving award"
+								class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+							/>
+						</div>
+						<div class="rounded-2xl aspect-3/4 overflow-hidden">
+							<img
+								src="/images/president/gbs1-speech.webp"
+								alt="President Sanvictores delivering speech"
+								class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+							/>
+						</div>
 						<span
-							class="-bottom-4 left-8 absolute px-5 py-2 rounded-full font-medium text-white text-sm glass"
+							class="-bottom-4 left-8 z-10 absolute px-5 py-2 rounded-full font-medium text-white text-sm glass"
 						>
 							FY 2025-2026
 						</span>
@@ -289,10 +302,10 @@
 				</div>
 			</ScrollReveal>
 
-			<div class="hidden gap-6 lg:grid lg:grid-cols-3 lg:grid-rows-2 mt-12">
+			<div class="gap-4 sm:gap-5 lg:gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 mt-12">
 				{#each announcements as item, i (item.title)}
 					<ScrollReveal delay={i * 80} stagger={0}>
-						<div class={i === 0 ? 'row-span-2 h-full [&>article]:h-full' : ''}>
+						<div class={i === 0 ? 'lg:row-span-2 h-full [&>article]:h-full' : ''}>
 							<AnnouncementCard
 								image={item.image}
 								date={item.date}
@@ -301,24 +314,6 @@
 							/>
 						</div>
 					</ScrollReveal>
-				{/each}
-			</div>
-
-			<div
-				class="lg:hidden flex gap-4 mt-12 pb-4 overflow-x-auto snap-mandatory snap-x"
-				style="-webkit-overflow-scrolling: touch;"
-			>
-				{#each announcements as item, i (item.title)}
-					<div class="min-w-[80vw] snap-center shrink-0">
-						<ScrollReveal delay={i * 80}>
-							<AnnouncementCard
-								image={item.image}
-								date={item.date}
-								title={item.title}
-								excerpt={item.excerpt}
-							/>
-						</ScrollReveal>
-					</div>
 				{/each}
 			</div>
 		</div>

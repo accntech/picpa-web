@@ -32,12 +32,12 @@
 
 <section class="bg-white py-24">
 	<div class="mx-auto max-w-7xl px-4 lg:px-8">
-		<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-5">
+		<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[2fr_3fr]">
 			<ScrollReveal direction="left">
-				<div class="relative lg:col-span-2">
+				<div class="relative">
 					<div class="relative overflow-hidden rounded-2xl">
 						<img
-							src="/images/president/gbs3.png"
+							src="/images/president/gsb3.webp"
 							alt="Gerard B. Sanvictores"
 							class="w-full"
 						/>
@@ -52,7 +52,7 @@
 			</ScrollReveal>
 
 			<ScrollReveal direction="right" delay={100}>
-				<div class="lg:col-span-3">
+				<div>
 					<span class="inline-block rounded-full bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
 						FY 2025-2026 Theme
 					</span>

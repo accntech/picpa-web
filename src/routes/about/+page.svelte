@@ -118,37 +118,37 @@
 <PageHero title="About PICPA" breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
 
 <section class="bg-white py-24">
-	<div class="mx-auto max-w-7xl px-4 lg:px-8">
+	<div class="mx-auto px-4 lg:px-8 max-w-7xl">
 		<ScrollReveal>
 			<div class="max-w-2xl">
-				<p class="text-sm font-medium uppercase tracking-widest text-primary">Our Heritage</p>
-				<h2 class="mt-3 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-tight text-dark">
+				<p class="font-medium text-primary text-sm uppercase tracking-widest">Our Heritage</p>
+				<h2 class="mt-3 font-heading font-bold text-[clamp(1.75rem,3vw,2.5rem)] text-dark leading-tight">
 					A Legacy of Professional Excellence
 				</h2>
-				<p class="mt-4 leading-relaxed text-body">
+				<p class="mt-4 text-body leading-relaxed">
 					From humble beginnings to the premier CPA organization in the Philippines
 				</p>
 			</div>
 		</ScrollReveal>
 
-		<div class="mt-16 hidden lg:block">
+		<div class="hidden lg:block mt-16">
 			<div class="relative">
-				<div class="absolute top-6 left-0 right-0 h-0.5 bg-linear-to-r from-primary/20 via-primary to-primary/20"></div>
-				<div class="absolute top-3 left-1/2 -translate-x-1/2">
-					<svg class="h-7 w-12 text-primary/30" viewBox="0 0 87 85" fill="currentColor">
+				<div class="top-6 right-0 left-0 absolute bg-linear-to-r from-primary/20 via-primary to-primary/20 h-0.5"></div>
+				<div class="top-3 left-1/2 absolute -translate-x-1/2">
+					<svg class="w-12 h-7 text-primary/30" viewBox="0 0 87 85" fill="currentColor">
 						<polygon points="33,84 14,57 33,28 19,28 0,57 19,84" />
 						<polygon points="51,84 32,57 51,28 37,28 18,57 37,84" />
 						<polygon points="36,57 55,29 36,0 50,0 69,29 50,57" />
 						<polygon points="54,57 73,29 54,0 68,0 87,29 68,57" />
 					</svg>
 				</div>
-				<div class="grid grid-cols-4 gap-8">
+				<div class="gap-8 grid grid-cols-4">
 					{#each milestones as milestone, i (milestone.date)}
 						<ScrollReveal delay={i * 120}>
 							<div class="pt-14">
-								<div class="absolute -mt-8 h-3 w-3 rounded-full border-[3px] border-white bg-primary shadow-sm" style="animation: pulse-glow 3s ease-in-out infinite {i * 0.5}s;"></div>
-								<p class="text-sm font-bold tracking-wide text-primary">{milestone.date}</p>
-								<p class="mt-3 text-sm leading-relaxed text-body">{milestone.text}</p>
+								<div class="absolute bg-primary shadow-sm -mt-9.5 ml-2 border-[3px] border-white rounded-full size-4" style="animation: pulse-glow 3s ease-in-out infinite {i * 0.5}s;"></div>
+								<p class="font-bold text-primary text-sm tracking-wide">{milestone.date}</p>
+								<p class="mt-3 text-body text-sm leading-relaxed">{milestone.text}</p>
 							</div>
 						</ScrollReveal>
 					{/each}
@@ -156,16 +156,16 @@
 			</div>
 		</div>
 
-		<div class="mt-12 lg:hidden">
-			<div class="relative ml-4 border-l-2 border-primary/30">
+		<div class="lg:hidden mt-12">
+			<div class="relative ml-6 border-primary/30 border-l-2">
 				{#each milestones as milestone, i (milestone.date)}
-					<ScrollReveal delay={i * 80}>
-						<div class="relative pb-10 pl-8">
-							<div class="absolute left-[-9px] top-0.5 h-4 w-4 rounded-full border-[3px] border-white bg-primary shadow-sm"></div>
-							<p class="text-sm font-bold tracking-wide text-primary">{milestone.date}</p>
-							<p class="mt-2 leading-relaxed text-body">{milestone.text}</p>
-						</div>
-					</ScrollReveal>
+					<div class="relative pb-10 pl-8">
+						<div class="top-1 -left-2.25 absolute bg-primary shadow-sm border-[3px] border-white rounded-full w-4 h-4"></div>
+						<ScrollReveal delay={i * 80}>
+							<p class="font-bold text-primary text-sm tracking-wide">{milestone.date}</p>
+							<p class="mt-2 text-body leading-relaxed">{milestone.text}</p>
+						</ScrollReveal>
+					</div>
 				{/each}
 			</div>
 		</div>
@@ -173,36 +173,36 @@
 </section>
 
 <section class="relative bg-navy py-24">
-	<div class="gradient-mesh-bg absolute inset-0"></div>
+	<div class="absolute inset-0 gradient-mesh-bg"></div>
 
-	<svg class="absolute top-8 right-12 h-36 w-36 text-white/3" style="animation: float 6s ease-in-out infinite;" viewBox="0 0 87 85" fill="currentColor">
+	<svg class="top-6 right-12 absolute w-36 h-36 text-white/3" style="animation: float 6s ease-in-out infinite;" viewBox="0 0 87 85" fill="currentColor">
 		<polygon points="33,84 14,57 33,28 19,28 0,57 19,84" />
 		<polygon points="51,84 32,57 51,28 37,28 18,57 37,84" />
 		<polygon points="36,57 55,29 36,0 50,0 69,29 50,57" />
 		<polygon points="54,57 73,29 54,0 68,0 87,29 68,57" />
 	</svg>
 
-	<div class="relative mx-auto max-w-7xl px-4 lg:px-8">
+	<div class="relative mx-auto px-4 lg:px-8 max-w-7xl">
 		<ScrollReveal>
 			<div class="text-center">
-				<p class="text-sm font-medium uppercase tracking-widest text-primary">Our Purpose</p>
-				<h2 class="mt-3 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-white">
+				<p class="font-medium text-primary text-sm uppercase tracking-widest">Our Purpose</p>
+				<h2 class="mt-3 font-heading font-bold text-[clamp(1.75rem,3vw,2.5rem)] text-white">
 					Founding Goals
 				</h2>
 			</div>
 		</ScrollReveal>
 
-		<div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
+		<div class="gap-6 grid grid-cols-1 md:grid-cols-2 mt-14">
 			{#each goals as goal, i (goal.title)}
 				<ScrollReveal stagger={i}>
-					<div class="glass rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20">
-						<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-							<svg class="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+					<div class="p-8 hover:border-primary/20 rounded-2xl transition-all hover:-translate-y-1 duration-300 glass">
+						<div class="flex justify-center items-center bg-primary/10 rounded-xl w-12 h-12">
+							<svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" d={goalIcons[i]} />
 							</svg>
 						</div>
-						<h3 class="mt-5 font-heading text-xl font-bold text-white">{goal.title}</h3>
-						<p class="mt-2 leading-relaxed text-slate">{goal.desc}</p>
+						<h3 class="mt-5 font-heading font-bold text-white text-xl">{goal.title}</h3>
+						<p class="mt-2 text-slate leading-relaxed">{goal.desc}</p>
 					</div>
 				</ScrollReveal>
 			{/each}
@@ -211,31 +211,31 @@
 </section>
 
 <section class="bg-light py-20">
-	<div class="mx-auto max-w-7xl px-4 lg:px-8">
+	<div class="mx-auto px-4 lg:px-8 max-w-7xl">
 		<ScrollReveal>
 			<div class="max-w-2xl">
-				<p class="text-sm font-medium uppercase tracking-widest text-primary">Organization</p>
-				<h2 class="mt-3 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-tight text-dark">
+				<p class="font-medium text-primary text-sm uppercase tracking-widest">Organization</p>
+				<h2 class="mt-3 font-heading font-bold text-[clamp(1.75rem,3vw,2.5rem)] text-dark leading-tight">
 					Four Professional Sectors
 				</h2>
-				<p class="mt-4 leading-relaxed text-body">
+				<p class="mt-4 text-body leading-relaxed">
 					PICPA members are organized into four key sectors of the profession
 				</p>
 			</div>
 		</ScrollReveal>
 
-		<div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+		<div class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-14">
 			{#each sectors as sector, i (sector.acronym)}
 				<ScrollReveal stagger={i}>
-					<div class="rounded-2xl border-l-4 border-primary bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-						<p class="text-xs font-bold uppercase tracking-wider text-primary">
+					<div class="bg-white shadow-sm hover:shadow-lg p-6 border-primary border-l-4 rounded-2xl transition-all hover:-translate-y-1 duration-300">
+						<p class="font-bold text-primary text-xs uppercase tracking-wider">
 							{sector.acronym}
 						</p>
-						<h3 class="mt-3 font-heading text-lg font-bold text-dark">{sector.title}</h3>
-						<p class="mt-2 text-sm leading-relaxed text-body">{sector.desc}</p>
-						<div class="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
+						<h3 class="mt-3 font-heading font-bold text-dark text-lg">{sector.title}</h3>
+						<p class="mt-2 text-body text-sm leading-relaxed">{sector.desc}</p>
+						<div class="flex items-center gap-1 mt-4 font-medium text-primary text-sm">
 							<span>Learn more</span>
-							<svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+							<svg class="w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
 								<polyline points="6,4 14,10 6,16" />
 								<polyline points="10,4 18,10 10,16" />
 							</svg>
@@ -248,33 +248,33 @@
 </section>
 
 <section class="relative bg-navy py-24">
-	<div class="gradient-mesh-bg absolute inset-0"></div>
+	<div class="absolute inset-0 gradient-mesh-bg"></div>
 
-	<div class="relative mx-auto max-w-4xl px-4 lg:px-8" use:observeStats>
+	<div class="relative mx-auto px-4 lg:px-8 max-w-4xl" use:observeStats>
 		<ScrollReveal>
 			<div class="text-center">
-				<p class="text-sm font-medium uppercase tracking-widest text-primary">By the Numbers</p>
-				<h2 class="mt-3 font-heading text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-white">
+				<p class="font-medium text-primary text-sm uppercase tracking-widest">By the Numbers</p>
+				<h2 class="mt-3 font-heading font-bold text-[clamp(1.75rem,3vw,2.5rem)] text-white">
 					Organizational Structure
 				</h2>
 			</div>
 		</ScrollReveal>
 
-		<div class="mt-14 grid grid-cols-3 gap-8">
+		<div class="gap-6 sm:gap-8 grid grid-cols-1 sm:grid-cols-3 mt-14">
 			{#each stats as stat, i (stat.label)}
 				<ScrollReveal stagger={i}>
-					<div class="glass rounded-2xl p-8 text-center">
-						<p class="font-heading text-[clamp(2rem,4vw,3.5rem)] font-bold text-primary">
+					<div class="p-8 rounded-2xl text-center glass">
+						<p class="font-heading font-bold text-[clamp(2rem,4vw,3.5rem)] text-primary">
 							{counters[i]}
 						</p>
-						<p class="mt-2 text-sm font-medium text-slate">{stat.label}</p>
+						<p class="mt-2 font-medium text-slate text-sm">{stat.label}</p>
 					</div>
 				</ScrollReveal>
 			{/each}
 		</div>
 
 		<ScrollReveal delay={300}>
-			<p class="mx-auto mt-12 max-w-2xl text-center leading-relaxed text-slate">
+			<p class="mx-auto mt-12 max-w-2xl text-slate text-center leading-relaxed">
 				PICPA's organizational structure spans 9 regions across the Philippines, governed by a
 				21-member National Board of Directors, with 84 local chapters and 17 international
 				chapters ensuring representation for all Filipino CPAs worldwide.

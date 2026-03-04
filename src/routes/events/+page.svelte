@@ -106,9 +106,9 @@
 
 <section class="relative overflow-hidden bg-navy py-6">
 	<div class="gradient-mesh-bg pointer-events-none absolute inset-0 opacity-40"></div>
-	<div class="relative mx-auto flex max-w-7xl items-center gap-4 px-4 lg:px-8">
-		<div class="glass flex flex-1 items-center gap-4 rounded-2xl px-6 py-4">
-			<svg class="h-6 w-6 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+	<div class="relative mx-auto max-w-7xl px-4 lg:px-8">
+		<div class="glass flex flex-col gap-4 rounded-2xl px-6 py-4 sm:flex-row sm:items-center">
+			<svg class="hidden h-6 w-6 shrink-0 text-primary sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 				<circle cx="12" cy="12" r="10" />
 				<path d="M12 16v-4" />
 				<path d="M12 8h.01" />
@@ -120,7 +120,7 @@
 				href="https://picpasystem.com.ph/events/"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+				class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark sm:ml-auto"
 			>
 				Visit Events Portal
 				<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -129,9 +129,22 @@
 	</div>
 
 	<div class="border-white/10 border-t">
-		<div class="mx-auto px-4 lg:px-8 py-6 max-w-7xl">
-			<p class="text-white/50 text-sm text-center">
+		<div class="mx-auto px-4 lg:px-8 py-6 max-w-7xl text-center">
+			<p class="text-white/50 text-sm">
 				&copy; 2026 PICPA - Philippine Institute of Certified Public Accountants
+			</p>
+			<p class="mt-2 text-white/50 text-xs">
+				Powered by
+				<a
+					href="https://accountech.dev"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group inline font-bold text-foreground/80 hover:text-foreground transition-colors"
+				>
+					accoun<span
+						class="text-teal-400 group-hover:text-teal-300 transition-colors"
+					>tech</span><span class="text-teal-400">.</span>
+				</a>
 			</p>
 		</div>
 	</div>

@@ -3,11 +3,13 @@
 
 	let {
 		children,
+		class: className = '',
 		delay = $bindable(0),
 		direction = 'up',
 		stagger = $bindable(0)
 	}: {
 		children: Snippet;
+		class?: string;
 		delay?: number;
 		direction?: 'up' | 'left' | 'right' | 'down';
 		stagger?: number;
@@ -40,6 +42,7 @@
 </script>
 
 <div
+	class={className}
 	use:reveal
 	style="opacity: {visible ? 1 : 0}; filter: blur({visible ? 0 : 8}px); transform: {visible
 		? 'none'
