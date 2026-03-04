@@ -174,8 +174,8 @@
 
 		<div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each regions as region, i (region.name)}
-				<ScrollReveal stagger={i}>
-					<div class="group rounded-2xl bg-white p-7 shadow-md ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);">
+				<ScrollReveal class="h-full" stagger={i}>
+					<div class="group h-full rounded-2xl bg-white p-7 shadow-md ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);">
 						<div class="flex items-start gap-4">
 							<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
 								<svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
